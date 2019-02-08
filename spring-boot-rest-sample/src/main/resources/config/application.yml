@@ -1,0 +1,8 @@
+crnk:
+  domainName: http://localhost:8081
+  pathPrefix: /api
+
+server.port: 8081
+
+soap:
+ device.management: "http://localhost:8888/ws"

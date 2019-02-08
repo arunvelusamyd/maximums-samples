@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetDeviceDetailsResponse xmlns="http://flexy.com/device"
+						  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						  xsi:schemaLocation="http://flexy.com/device device-details.xsd">
+	<DeviceDetails>
+		<id>123</id>
+		<name>iPhone XS</name>
+		<description>iPhone release by apple on 2018 sep.</description>
+	</DeviceDetails>
+</GetDeviceDetailsResponse>
