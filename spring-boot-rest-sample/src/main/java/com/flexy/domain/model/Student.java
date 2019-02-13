@@ -28,4 +28,10 @@ public class Student {
     @JsonApiRelation(serialize = SerializeType.EAGER)
     private List<Course> courses;
 
+    @JsonProperty("level-and-section")
+    private String levelAndSection;
+
+    @JsonProperty("class-teacher")
+    private Object classTeacher;
+
 }
