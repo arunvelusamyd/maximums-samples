@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.hazelcast.com/schema/config
+           http://www.hazelcast.com/schema/config/hazelcast-config-3.8.xsd">
+    <properties>
+        <property name="hazelcast.jmx">true</property>
+
+        <property name="hazelcast.tcp.join.port.try.count">50</property>
+        <!--<property name="hazelcast.merge.first.run.delay.seconds">600</property>
+        <property name="hazelcast.merge.next.run.delay.seconds">600</property>-->
+    </properties>
+
+    <map name="emp-*">
+        <time-to-live-seconds>120</time-to-live-seconds>
+        <eviction-policy>LRU</eviction-policy>
+        <max-size policy="PER_NODE">5000</max-size>
+    </map>
+
+    <network>
+        <port auto-increment="true" port-count="100">50501</port>
+
+        <outbound-ports>
+            <ports>30000-31000</ports>
+        </outbound-ports>
+
+        <join>
+            <multicast enabled="false"/>
+
+            <tcp-ip enabled="true">
+                <member>localhost</member>
+                <member>localhost</member>
+            </tcp-ip>
+        </join>
+
+    </network>
+    
+</hazelcast>

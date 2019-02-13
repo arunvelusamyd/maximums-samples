@@ -1,13 +1,17 @@
 package com.flexy.domain.store;
 
 import com.flexy.device.*;
+import com.flexy.domain.dto.Employee;
+import com.flexy.domain.gateway.EmployeeGateway;
 import com.flexy.domain.model.Course;
 import com.flexy.domain.model.DeviceInfo;
 import com.flexy.domain.model.Student;
+import com.flexy.domain.model.Teacher;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +25,9 @@ public class StudentStore {
     @Value("${soap.device.management}")
     private String deviceManagementEndpoint;
 
+    @Autowired
+    private EmployeeGateway employeeGateway;
+
     public List<Student> findAllStudentsWithCourse() {
         List<Student> students = new ArrayList<>();
         Student arun = new Student();
@@ -29,6 +36,8 @@ public class StudentStore {
         arun.setGender("M");
         arun.setCourses(findAllCourses());
         arun.setDeviceInfo(findDevice(1));
+        arun.setLevelAndSection("5");
+        arun.setClassTeacher(getTeacher(1));
         students.add(arun);
 
         Student ashok = new Student();
@@ -37,6 +46,8 @@ public class StudentStore {
         ashok.setGender("M");
         ashok.setCourses(findAllCourses());
         ashok.setDeviceInfo(findDevice(2));
+        ashok.setLevelAndSection("6");
+        ashok.setClassTeacher(getTeacher(2));
         students.add(ashok);
 
         return students;
@@ -58,10 +69,19 @@ public class StudentStore {
         return courses;
     }
 
+    public Teacher getTeacher(int employeeId) {
+        Employee employee = employeeGateway.getEmployee(1);
+        Teacher teacher = new Teacher();
+        teacher.setEmployeeId(String.valueOf(employee.getEmployeeId()));
+        teacher.setEducationQualification(employee.getEducationQualification());
+        teacher.setTeacherName(employee.getEmployeeName());
+        return teacher;
+    }
+
 
     private DeviceInfo findDevice(int deviceId) {
         log.info("Finding device details...");
-        JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
+        /*JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
         jaxWsProxyFactoryBean.setServiceClass(DevicePort.class);
         jaxWsProxyFactoryBean.setAddress(deviceManagementEndpoint);
         jaxWsProxyFactoryBean.getOutInterceptors().add(new LoggingOutInterceptor());
@@ -80,8 +100,9 @@ public class StudentStore {
         deviceInfo.setDeviceDetail(deviceDetails.getDescription());
 
         log.info("Got the the device details.");
-        return deviceInfo;
+        return deviceInfo;*/
 
+        return null;
     }
 
 }
