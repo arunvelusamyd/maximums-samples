@@ -32,6 +32,10 @@ public class EmployeeService {
         return employeeList;
     }
 
+    public Employee getEmployee(int employeeId) {
+        return employeeStore.findEmployee(employeeId);
+    }
+
 
     //TODO: You can create an aspect & move the below.
     private Object getOrstoreInCache(String cacheName, String cacheKey, Object object) {

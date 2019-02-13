@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Long> {
+public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Integer> {
 
     protected EmployeeRepositoryImpl() {
         super(Employee.class);
@@ -29,4 +29,11 @@ public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Lon
         employeeResourceList.addAll(employees);
         return employeeResourceList;
     }
+
+    @Override
+    public Employee findOne(Integer employeeId, QuerySpec querySpec) {
+        Employee employee = employeeService.getEmployee(employeeId);
+        return employee;
+    }
+
 }

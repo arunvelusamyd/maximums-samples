@@ -5,4 +5,9 @@ crnk:
 server.port: 8081
 
 soap:
- device.management: "http://localhost:8888/ws"
+# device.management: "http://localhost:8888/ws" #Zerocode mock
+ device.management: "http://localhost:8080/ws" #Actual endpoint
+
+gateway:
+  employee:
+    baseUrl: "http://localhost:8082/api"
