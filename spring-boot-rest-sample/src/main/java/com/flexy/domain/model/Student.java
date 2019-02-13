@@ -32,6 +32,6 @@ public class Student {
     private String levelAndSection;
 
     @JsonProperty("class-teacher")
-    private Object classTeacher;
+    private Teacher classTeacher;
 
 }
