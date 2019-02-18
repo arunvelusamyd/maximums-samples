@@ -2,6 +2,4 @@ katharsis:
   domainName: http://localhost:8082
   pathPrefix: /api
 
-cxf.path: "/api"
-
 server.port: 8082
