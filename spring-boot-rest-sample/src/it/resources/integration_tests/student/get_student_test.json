@@ -17,6 +17,56 @@
               "status": 200,
               "xmlBody": "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP-ENV:Header/><SOAP-ENV:Body><ns2:GetDeviceDetailsResponse xmlns:ns2=\"http://flexy.com/device\"><ns2:DeviceDetails><ns2:id>1</ns2:id><ns2:name>iPad</ns2:name><ns2:description>It is a tablet computers designed, developed and marketed by Apple.</ns2:description></ns2:DeviceDetails></ns2:GetDeviceDetailsResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>"
             }
+          },
+          {
+            "name": "mocking_Employee_service",
+            "operation": "GET",
+            "url": "/api/employees/1",
+            "request": {
+            },
+            "response": {
+              "status": 200,
+              "body": {
+                "data": {
+                  "id": "1",
+                  "type": "employees",
+                  "attributes": {
+                    "role": "Maths Assistant Professor",
+                    "gender": "M",
+                    "education-qualification": "MSC(Maths)",
+                    "employee-name": "Arun"
+                  },
+                  "links": {
+                    "self": "http://localhost:8082/api/employees/1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "mocking_Employee_service",
+            "operation": "GET",
+            "url": "/api/employees/2",
+            "request": {
+            },
+            "response": {
+              "status": 200,
+              "body": {
+                "data": {
+                  "id": "2",
+                  "type": "employees",
+                  "attributes": {
+                    "role": "Technology Head",
+                    "gender": "M",
+                    "education-qualification": "ME(Computer science). Msc(Maths)",
+                    "employee-name": "Ashok"
+                  },
+                  "links": {
+                    "self": "http://localhost:8082/api/employees/2"
+                  }
+                }
+              }
+            }
           }
         ]
       },

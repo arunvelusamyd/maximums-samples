@@ -1,0 +1,4 @@
+FROM java:8
+EXPOSE 8080
+ADD /target/spring-boot-rest-sample-1.0.0.jar spring-boot-rest-sample.jar
+ENTRYPOINT ["java", "-jar", "spring-boot-rest-sample.jar"]
