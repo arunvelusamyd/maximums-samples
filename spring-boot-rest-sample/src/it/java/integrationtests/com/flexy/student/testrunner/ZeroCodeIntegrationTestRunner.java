@@ -7,6 +7,8 @@ import org.junit.runners.model.InitializationError;
 public class ZeroCodeIntegrationTestRunner  extends ZeroCodeUnitRunner {
 
     static{
+        System.setProperty("gateway.employee.baseUrl", "http://localhost:8888/api");
+
         String[] emptyArgs = {};
         SpringBootKatharsisApplication.main(emptyArgs);
     }
