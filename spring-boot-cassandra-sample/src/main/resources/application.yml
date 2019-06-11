@@ -1,0 +1,6 @@
+spring:
+ data:
+  cassandra:
+   keyspace-name: arun_keyspace
+   contact-points: my-cassandra
+   port: 9042
