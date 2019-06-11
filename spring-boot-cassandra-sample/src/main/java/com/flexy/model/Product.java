@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Product {
 
     @JsonProperty("id")
-    private String productId;
+    private String strProductId;
 
     @JsonProperty("product-name")
     private String productName;
