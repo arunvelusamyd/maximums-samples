@@ -1,8 +1,6 @@
 package com.flexy.service;
 
-import com.flexy.model.Product;
-
-import java.util.Optional;
+import com.flexy.redisdemo.model.Product;
 
 public interface ProductService {
 

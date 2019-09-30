@@ -1,8 +1,8 @@
 package com.flexy.services;
 
-import com.flexy.model.MonthAttendance;
-import com.flexy.model.Student;
-import com.flexy.model.StudentCourse;
+import com.flexy.redisdemo.model.MonthAttendance;
+import com.flexy.redisdemo.model.Student;
+import com.flexy.redisdemo.model.StudentCourse;
 
 import javax.jws.WebService;
 import javax.ws.rs.*;
