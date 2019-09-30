@@ -1,6 +1,5 @@
-package com.flexy.model;
+package com.flexy.redisdemo.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 /**

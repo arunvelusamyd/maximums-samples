@@ -1,6 +1,4 @@
-package com.flexy.model;
-
-import javax.persistence.*;
+package com.flexy.redisdemo.model;
 
 /**
  * Created by arunv on 15/10/16.

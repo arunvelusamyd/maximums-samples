@@ -3,7 +3,7 @@ package com.flexy.service;
 import com.flexy.dao.ProductStore;
 import com.flexy.domain.ProductEntity;
 import com.flexy.mapper.ProductMapper;
-import com.flexy.model.Product;
+import com.flexy.redisdemo.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

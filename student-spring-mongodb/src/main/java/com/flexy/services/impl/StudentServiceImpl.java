@@ -1,15 +1,11 @@
 package com.flexy.services.impl;
 
-import com.flexy.model.Student;
+import com.flexy.redisdemo.model.Student;
 import com.flexy.repository.StudentRepository;
 import com.flexy.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import javax.ws.rs.PathParam;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

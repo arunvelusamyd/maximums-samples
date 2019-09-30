@@ -1,6 +1,6 @@
-package com.flexy.controller;
+package com.flexy.redisdemo.controller;
 
-import com.flexy.model.Product;
+import com.flexy.redisdemo.model.Product;
 import com.flexy.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,7 +1,7 @@
 package com.flexy.mapper;
 
 import com.flexy.domain.ProductEntity;
-import com.flexy.model.Product;
+import com.flexy.redisdemo.model.Product;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 

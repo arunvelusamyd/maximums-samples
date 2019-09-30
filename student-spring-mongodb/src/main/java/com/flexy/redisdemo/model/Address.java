@@ -1,9 +1,4 @@
-package com.flexy.model;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.flexy.redisdemo.model;
 
 /**
  * Created by arunv on 18/10/16.
