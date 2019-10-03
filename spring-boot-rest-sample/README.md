@@ -1,0 +1,1 @@
+#Docker , #cxf-codegen-plugin, #SOAP client , #CRNK #crnk , #jsonapi
