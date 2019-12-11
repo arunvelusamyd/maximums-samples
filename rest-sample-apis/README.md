@@ -17,3 +17,6 @@ docker container ls
 
 To tail the logs,
 docker logs -f <<container_id>>
+
+To kill the docker container
+docker kill <<container_id>>
