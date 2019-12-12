@@ -6,11 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @Controller
 public class ProductController {
 
     @Autowired
     private ProductServiceImpl productService;
+
+    @RequestMapping(path = "/products", method = RequestMethod.GET)
+    public @ResponseBody
+    Map<String, List<Product>> getProduct() {
+        Map<String, List<Product>> productResponse = productService.getProducts();
+        return productResponse;
+    }
 
     @RequestMapping(path = "/products/{productId}", method = RequestMethod.GET)
     public @ResponseBody
