@@ -1,14 +1,11 @@
 package com.flexy.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class LoginResponse {
 
-    private String userName;
-
-    private String status;
-
-    private String level;
+    public UserProfile login;
 
 }
