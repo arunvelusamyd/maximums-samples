@@ -12,10 +12,6 @@ export default Ember.Route.extend({
           loginRequest.save().then((data) => {
             console.log("Saving the data");
             console.log(data);
-          },
-          (error) => {
-            console.log("Handling Error...");
-            this.transitionTo('home');
           });
         }
       }
