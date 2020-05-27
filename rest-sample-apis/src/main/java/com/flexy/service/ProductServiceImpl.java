@@ -19,6 +19,7 @@ public class ProductServiceImpl implements ProductService {
     public Map<String, List<Product>> getProducts() {
         List<Product> productList = productStore.findAll();
         Map<String, List<Product>> productResponse = new HashMap<>();
+        productResponse.put("products", productList);
         return productResponse;
     }
 
