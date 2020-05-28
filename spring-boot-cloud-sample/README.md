@@ -1,1 +1,1 @@
-#hystrix
+#hystrix , #feign , #Feign

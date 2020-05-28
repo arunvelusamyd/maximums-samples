@@ -3,11 +3,26 @@ package com.flexy.service;
 import com.flexy.dto.Product;
 import com.flexy.model.Device;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class DeviceService {
+
+    @Autowired
+    private ProductClient productClient;
+
+    public Device getDeviceV2() {
+        Product product = productClient.getDevice("products", "1");
+        Device device = new Device();
+        device.setDeviceId(product.getProductId());
+        device.setDeviceName(product.getProductName());
+        device.setDeviceModel("XS");
+        device.setAvailable(true);
+        device.setOsVersion("iOS 13.5");
+        return device;
+    }
 
     @HystrixCommand(fallbackMethod = "defaultDevice")
     public Device getDevice() {
@@ -32,5 +47,7 @@ public class DeviceService {
         device.setOsVersion("iOS 13");
         return device;
     }
+
+
 
 }
