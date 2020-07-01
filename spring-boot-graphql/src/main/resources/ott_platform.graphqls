@@ -1,0 +1,30 @@
+type OttPlatform {
+    applicationName: String!
+    appVersion: String!
+    ownedBy: String!
+    newMovie: Movie!
+    newSeries: WebSeries!
+}
+
+type Movie {
+    movieName: String!,
+    director:   String!,
+    producedBy:   String!,
+    leadActor:   String!,
+    leadActress:   String!,
+    releaseDate:   String!,
+}
+
+type WebSeries {
+    seriesName: String!,
+    director:   String!,
+    producedBy:   String!,
+    leadActor:   String!,
+    leadActress:   String!,
+    sessionNo:   String!,
+    episodeNo:   String!
+}
+
+type Query {
+        ottPlatform(applicationName:String) : OttPlatform;
+}
