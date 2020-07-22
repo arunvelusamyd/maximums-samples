@@ -3,3 +3,5 @@ target
 .idea
 */target
 */dist
+*/.scaffolding_list.tmp
+.scaffolding_list.tmp
