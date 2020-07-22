@@ -6,12 +6,14 @@ import io.katharsis.queryspec.QuerySpec;
 import io.katharsis.repository.ResourceRepositoryBase;
 import io.katharsis.resource.list.DefaultResourceList;
 import io.katharsis.resource.list.ResourceList;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@Slf4j
 public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Integer> {
 
     protected EmployeeRepositoryImpl() {
@@ -23,7 +25,7 @@ public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Int
 
     @Override
     public ResourceList<Employee> findAll(QuerySpec querySpec) {
-        System.out.println(" Getting all employees service started . . . ");
+        log.info(" Getting all employees service started . . . ");
         ResourceList<Employee> employeeResourceList = new DefaultResourceList<>();
         List<Employee> employees = employeeService.getAllEmployees();
         employeeResourceList.addAll(employees);
@@ -32,6 +34,7 @@ public class EmployeeRepositoryImpl extends ResourceRepositoryBase<Employee, Int
 
     @Override
     public Employee findOne(Integer employeeId, QuerySpec querySpec) {
+        log.info(" Getting employee by Id {}", employeeId);
         Employee employee = employeeService.getEmployee(employeeId);
         return employee;
     }
