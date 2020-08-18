@@ -1,0 +1,29 @@
+management:
+ endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+    integrationgraph:
+      enabled: true
+ trace:
+  http:
+  enabled: true
+ endpoints:
+    web:
+      exposure.include: "*"
+      base-path: /actuator
+      cors.allowed-origins: true
+    jmx:
+      exposure.include: "*"
+ info:
+   git:
+    mode: "FULL"
+info:
+ app:
+   name: "REST SAMPLE APIS"
+   description: "REST SAMPLE APIS. It's a module under maximums-samples. We can build a dockerImage & use it"
+   version: "1.0"
