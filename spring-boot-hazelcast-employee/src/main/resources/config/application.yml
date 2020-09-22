@@ -2,4 +2,4 @@ crnk:
   domainName: http://localhost:8082
   pathPrefix: /api
 
-server.port: 8083
+server.port: 8082
