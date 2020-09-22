@@ -16,7 +16,8 @@ import java.util.Map;
 @Slf4j
 public class EmployeeService {
 
-    private static final String employeeServie = "employee-service";
+    @Autowired
+    private HazelcastInstance hazelcastInstance;
 
     @Autowired
     private EmployeeStore employeeStore;
@@ -38,10 +39,6 @@ public class EmployeeService {
 
     //TODO: You can create an aspect & move the below.
     private Object getOrstoreInCache(String cacheName, String cacheKey, Object object) {
-        Config config = new Config();
-        config.setInstanceName("hazelcast-sample-service");
-        HazelcastInstance hazelcastInstance = Hazelcast.getOrCreateHazelcastInstance(config);
-
         Map<Object, Object> iCacheMap = hazelcastInstance.getMap(cacheName);
         Object cachedObject = iCacheMap.get(cacheKey);
         if(cachedObject != null) {
