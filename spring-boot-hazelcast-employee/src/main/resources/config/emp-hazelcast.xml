@@ -13,8 +13,8 @@
 
     <map name="emp-*">
         <time-to-live-seconds>120</time-to-live-seconds>
-        <eviction-policy>LRU</eviction-policy>
-        <max-size policy="PER_NODE">5000</max-size>
+        <!--<eviction-policy>LRU</eviction-policy>
+        <max-size policy="PER_NODE">5000</max-size>-->
     </map>
 
     <network>

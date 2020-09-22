@@ -2,10 +2,10 @@ package com.flexy.domain.repository;
 
 import com.flexy.domain.model.Employee;
 import com.flexy.domain.service.EmployeeService;
-import io.katharsis.queryspec.QuerySpec;
-import io.katharsis.repository.ResourceRepositoryBase;
-import io.katharsis.resource.list.DefaultResourceList;
-import io.katharsis.resource.list.ResourceList;
+import io.crnk.core.queryspec.QuerySpec;
+import io.crnk.core.repository.ResourceRepositoryBase;
+import io.crnk.core.resource.list.DefaultResourceList;
+import io.crnk.core.resource.list.ResourceList;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

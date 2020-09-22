@@ -1,8 +1,8 @@
 package com.flexy.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.katharsis.resource.annotations.JsonApiId;
-import io.katharsis.resource.annotations.JsonApiResource;
+import io.crnk.core.resource.annotations.JsonApiId;
+import io.crnk.core.resource.annotations.JsonApiResource;
 import lombok.Data;
 
 import java.io.Serializable;
