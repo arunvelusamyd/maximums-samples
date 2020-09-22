@@ -1,7 +1,5 @@
-katharsis:
+crnk:
   domainName: http://localhost:8082
   pathPrefix: /api
 
-cxf.path: "/api"
-
-server.port: 8082
+server.port: 8083
