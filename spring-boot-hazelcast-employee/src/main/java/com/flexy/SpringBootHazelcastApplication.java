@@ -16,9 +16,4 @@ public class SpringBootHazelcastApplication {
 		SpringApplication.run(SpringBootHazelcastApplication.class, args);
 	}
 
-	@Bean(destroyMethod = "shutdown")
-	public HazelcastInstance createStorageNode() throws Exception {
-		return Hazelcast.newHazelcastInstance(new Config("hazelcast-sample-service"));
-	}
-
 }
