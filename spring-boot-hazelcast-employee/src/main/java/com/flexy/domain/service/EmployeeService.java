@@ -2,7 +2,9 @@ package com.flexy.domain.service;
 
 import com.flexy.domain.model.Employee;
 import com.flexy.domain.store.EmployeeStore;
+import com.hazelcast.config.ClasspathXmlConfig;
 import com.hazelcast.config.Config;
+import com.hazelcast.config.KubernetesConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +41,14 @@ public class EmployeeService {
 
     //TODO: You can create an aspect & move the below.
     private Object getOrstoreInCache(String cacheName, String cacheKey, Object object) {
+        /*String configFile = "config/emp-hazelcast.xml";
+        Config classpathXmlConfig = new ClasspathXmlConfig(configFile);
+        classpathXmlConfig.setInstanceName("spring-boot-hazelcast-6");
+        classpathXmlConfig.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
+        KubernetesConfig kubernetesConfig = classpathXmlConfig.getNetworkConfig().getJoin().getKubernetesConfig().setEnabled(true);
+        kubernetesConfig.setProperty("service-name", "spring-boot-hazelcast-6");
+
+        HazelcastInstance hazelcastInstance = Hazelcast.getOrCreateHazelcastInstance(classpathXmlConfig);*/
         Map<Object, Object> iCacheMap = hazelcastInstance.getMap(cacheName);
         Object cachedObject = iCacheMap.get(cacheKey);
         if(cachedObject != null) {
