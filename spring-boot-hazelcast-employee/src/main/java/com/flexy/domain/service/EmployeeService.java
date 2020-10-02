@@ -19,6 +19,9 @@ import java.util.Map;
 public class EmployeeService {
 
     @Autowired
+    private HazelcastInstance hazelcastInstance;
+
+    @Autowired
     private EmployeeStore employeeStore;
 
     public List<Employee> getAllEmployees() {
@@ -38,14 +41,14 @@ public class EmployeeService {
 
     //TODO: You can create an aspect & move the below.
     private Object getOrstoreInCache(String cacheName, String cacheKey, Object object) {
-        String configFile = "config/emp-hazelcast.xml";
+        /*String configFile = "config/emp-hazelcast.xml";
         Config classpathXmlConfig = new ClasspathXmlConfig(configFile);
         classpathXmlConfig.setInstanceName("spring-boot-hazelcast-6");
         classpathXmlConfig.getNetworkConfig().getJoin().getMulticastConfig().setEnabled(false);
         KubernetesConfig kubernetesConfig = classpathXmlConfig.getNetworkConfig().getJoin().getKubernetesConfig().setEnabled(true);
         kubernetesConfig.setProperty("service-name", "spring-boot-hazelcast-6");
 
-        HazelcastInstance hazelcastInstance = Hazelcast.getOrCreateHazelcastInstance(classpathXmlConfig);
+        HazelcastInstance hazelcastInstance = Hazelcast.getOrCreateHazelcastInstance(classpathXmlConfig);*/
         Map<Object, Object> iCacheMap = hazelcastInstance.getMap(cacheName);
         Object cachedObject = iCacheMap.get(cacheKey);
         if(cachedObject != null) {

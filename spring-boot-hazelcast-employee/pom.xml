@@ -16,7 +16,7 @@
 	<properties>
 		<crnk.version>3.2.20200419165537</crnk.version>
 		<hazelcast.version>4.0.3</hazelcast.version>
-		<hazelcast-kubernetes.version>2.1</hazelcast-kubernetes.version>
+		<!--<hazelcast-kubernetes.version>2.1</hazelcast-kubernetes.version>-->
 	</properties>
 
 	<dependencies>
@@ -27,15 +27,27 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>2.2.5.RELEASE</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
 			<version>${hazelcast.version}</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast-kubernetes</artifactId>
 			<version>${hazelcast-kubernetes.version}</version>
+		</dependency>-->
+
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast-eureka-one</artifactId>
+			<version>2.0.1</version>
 		</dependency>
 
 		<dependency>
