@@ -1,71 +1,71 @@
 #Docker, #Api, #Restapi , #Apisamples
+### Docker commands 
+## To Build docker image,
+`docker image build -t rest-sample-apis .`
 
-#To Build docker image,
-docker image build -t rest-sample-apis .
+## To list docker images,
+`docker image ls`
 
-#To list docker images,
-docker image ls
+## To run the docker image,
+`docker run -p 8080:8080 rest-sample-apis`
 
-#To run the docker image,
-docker run -p 8080:8080 rest-sample-apis
+## To run the docker image in the background,
+`docker run -d -p 8080:8080 rest-sample-apis`
 
-#To run the docker image in the background,
-docker run -d -p 8080:8080 rest-sample-apis
+## TO list the docker containers,
+`docker container ls`
 
-#TO list the docker containers,
-docker container ls
+## To tail the logs,
+`docker logs -f <<container_id>>`
 
-#To tail the logs,
-docker logs -f <<container_id>>
+## To kill the docker container,
+`docker kill <<container_id>>`
 
-#To kill the docker container,
-docker kill <<container_id>>
+## Tag your image,
+`docker tag rest-sample-apis rest-sample-apis:1.0`
 
-#Tag your image,
-docker tag rest-sample-apis rest-sample-apis:1.0
+## login to docker hub from your terminal,
+`docker login --username=<<your user for https://hub.docker.com>>`
+## Enter you password.
 
-#login to docker hub from your terminal,
-docker login --username=<<your user for https://hub.docker.com>>
-#Enter you password.
+## build docker image with your username of docker hub,
+`docker image build -t <<your user for https://hub.docker.com>>/rest-sample-apis .`
 
-#build docker image with your username of docker hub,
-docker image build -t <<your user for https://hub.docker.com>>/rest-sample-apis .
+## Push docker image to docker hub https://hub.docker.com,
+`docker push <<your user for https://hub.docker.com>>/rest-sample-apis`
 
-#Push docker image to docker hub https://hub.docker.com,
-docker push <<your user for https://hub.docker.com>>/rest-sample-apis
-
-##Below are some sample actuator endpoints 
-#Actuators
+### Below are some sample actuator endpoints 
+## Actuators
 http://localhost:8080/actuator
-#info
+## info
 http://localhost:8080/actuator/info
-#health
+## health
 http://localhost:8080/actuator/health
-#beans
+## beans
 http://localhost:8080/actuator/beans
-#configprops
+## configprops
 http://localhost:8080/actuator/configprops
-#env
+## env
 http://localhost:8080/actuator/env
-#heapdump
+## heapdump
 http://localhost:8080/actuator/heapdump
-#httptrace
+## httptrace
 http://localhost:8080/actuator/httptrace
-#loggers
+## loggers
 http://localhost:8080/actuator/loggers
-#metrics
+## metrics
 http://localhost:8080/actuator/metrics
 http://localhost:8080/actuator/metrics/logback.events
 http://localhost:8080/actuator/metrics/http.server.requests
 http://localhost:8080/actuator/metrics/jvm.threads.live
-#mappings
+## mappings
 http://localhost:8080/actuator/mappings
-#scheduledtasks
+## scheduledtasks
 http://localhost:8080/actuator/scheduledtasks
-#threaddump
+## threaddump
 http://localhost:8080/actuator/threaddump
-#conditions
+## conditions
 http://localhost:8080/actuator/conditions
-#shutdown
-#Change log levels
-#Custom actuators
+## shutdown
+## Change log levels
+## Custom actuators
