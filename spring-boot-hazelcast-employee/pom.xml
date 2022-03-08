@@ -15,7 +15,7 @@
 
 	<properties>
 		<crnk.version>3.2.20200419165537</crnk.version>
-		<hazelcast.version>4.0.3</hazelcast.version>
+		<hazelcast.version>5.1</hazelcast.version>
 		<!--<hazelcast-kubernetes.version>2.1</hazelcast-kubernetes.version>-->
 	</properties>
 
